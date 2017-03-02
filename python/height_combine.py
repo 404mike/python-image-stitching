@@ -29,7 +29,7 @@ def stitch_images(filename, *args):
     for i in args:
         for j in i:
             # open image
-            image = Image.open('final/' + str(j))
+            image = Image.open('../image_column/' + str(j))
             # add border
             image = ImageOps.expand(image,border=10,fill='white')
             # get width and height
@@ -65,12 +65,12 @@ def stitch_images(filename, *args):
         image_offset_height += image[2]
 
     # save the image
-    result.save('movie/' + str(filename) + '.jpg')
+    result.save('../image_height/' + str(filename) + '.jpg')
     print "Image " + str(filename) + ".jpg Generated"
 
 # loop through all the images (45110) generated from combine.py
 # each number represents a filename, ie 1.jpg, 2.jpg etc
-for x in xrange(0,45110):
+for x in xrange(0,149):
 
     # array to store which images to combine
     images = []

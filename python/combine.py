@@ -18,12 +18,12 @@ def stitch_images(filename, *args):
     for i in args:
         for j in i:
             # open image
-            if os.path.getsize('images/'+j) == 0:
+            if os.path.getsize('../images/'+j) == 0:
                 imageName = 'blank_large.jpg'
             else:
                 imageName = j
 
-            image = Image.open('images/' + imageName)
+            image = Image.open('../images/' + imageName)
             # add border
             image = ImageOps.expand(image,border=10,fill='white')
             # get width and height
@@ -60,14 +60,14 @@ def stitch_images(filename, *args):
         image_offset_width += image[1]
 
     # save the image
-    result.save('final/' + str(filename) + '.jpg')
+    result.save('../image_column/' + str(filename) + '.jpg')
     print "Image " + str(filename) + ".jpg Generated"
     print ""
 
 
 def readJson():
     # read json file
-    with open('image_order.json') as data_file:
+    with open('../json/image_order.json') as data_file:
         data = json.load(data_file)
         # loop through json object
         for k,v in enumerate(data):

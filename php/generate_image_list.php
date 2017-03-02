@@ -28,13 +28,13 @@ class Generate_List {
 
     $this->readJson();
 
-    file_put_contents('image_order.json', json_encode($this->list,JSON_PRETTY_PRINT));
+    file_put_contents('../json/image_order.json', json_encode($this->list,JSON_PRETTY_PRINT));
   }
 
 
   private function readJson()
   {
-    $json = file_get_contents('dates_orderd.json');
+    $json = file_get_contents('../json/dates_ordered.json');
 
     $data = json_decode($json,true);
 
@@ -119,7 +119,7 @@ class Generate_List {
   private function cleanString($str)
   {
     $strArr = explode('/', $str);
-    $str = end($strArr).'.jpg';
+    $str = end($strArr);
     return $str;
   }
 

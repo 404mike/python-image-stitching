@@ -23,7 +23,7 @@ for month in months:
   draw = ImageDraw.Draw(img)
   draw.text((20, 35), month ,(0,0,0),font=font)
   draw = ImageDraw.Draw(img)
-  img.save(month + ".jpg")
+  img.save('../images/' + month + ".jpg")
 
 
 # Loop through years 
@@ -36,4 +36,4 @@ for i in range(116):
   draw = ImageDraw.Draw(img)
   draw.text((20, 35), year_text ,(0,0,0),font=font)
   draw = ImageDraw.Draw(img)
-  img.save(year_text + ".jpg")
+  img.save('../images/' + year_text + ".jpg")
