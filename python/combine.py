@@ -12,8 +12,8 @@ def stitch_images(filename, *args):
     # array to store image height
     all_height = []
 
-    print "Processing "
-    print args
+    print ("Processing {}".format(filename))
+    print (args)
 
     for i in args:
         for j in i:
@@ -23,7 +23,7 @@ def stitch_images(filename, *args):
             else:
                 imageName = j
 
-            image = Image.open('../images/' + imageName)
+            image = Image.open('../images/' + imageName)            
             # add border
             image = ImageOps.expand(image,border=10,fill='white')
             # get width and height
@@ -44,7 +44,7 @@ def stitch_images(filename, *args):
     # create height for overall canvas
     result_height = 0
     for h in all_height:
-        result_height = h
+        result_height = 300
 
     # set-up output of new image
     result = Image.new('RGB', (result_width, result_height), (255,255,255))
@@ -61,8 +61,8 @@ def stitch_images(filename, *args):
 
     # save the image
     result.save('../image_column/' + str(filename) + '.jpg')
-    print "Image " + str(filename) + ".jpg Generated"
-    print ""
+    print ("Image " + str(filename) + ".jpg Generated")
+    print ("")
 
 
 def readJson():

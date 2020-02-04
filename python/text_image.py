@@ -19,7 +19,7 @@ months = [
 # Loop through months
 for month in months:
   font = ImageFont.truetype("../font/Veracity SSi Italic.ttf",30)
-  img=Image.new("RGBA", (367,100),(255,255,255))
+  img=Image.new("RGB", (400,100),(255,255,255))
   draw = ImageDraw.Draw(img)
   draw.text((20, 35), month ,(0,0,0),font=font)
   draw = ImageDraw.Draw(img)
@@ -32,7 +32,7 @@ year = 1804
 for i in range(116):
   year_text = str(year + i)
   font = ImageFont.truetype("../font/Veracity SSi Italic.ttf",30)
-  img=Image.new("RGBA", (367,100),(255,255,255))
+  img=Image.new("RGB", (300,100),(255,255,255))
   draw = ImageDraw.Draw(img)
   draw.text((20, 35), year_text ,(0,0,0),font=font)
   draw = ImageDraw.Draw(img)

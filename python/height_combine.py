@@ -66,18 +66,18 @@ def stitch_images(filename, *args):
 
     # save the image
     result.save('../image_height/' + str(filename) + '.jpg')
-    print "Image " + str(filename) + ".jpg Generated"
+    print ("Image " + str(filename) + ".jpg Generated")
 
 # loop through all the images (45110) generated from combine.py
 # each number represents a filename, ie 1.jpg, 2.jpg etc
-for x in xrange(0,149):
+for x in range(0,9011):
 
     # array to store which images to combine
     images = []
 
     # Loop through the number of images we want to combine
     # start with the file in the current loop and increment on each loop
-    for y in xrange(0,5):
+    for y in range(0,4):
         newCount = x + y
         images.append(str(newCount) + '.jpg')
 
